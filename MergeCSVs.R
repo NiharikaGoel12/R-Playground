@@ -3,7 +3,7 @@ library(dplyr)
 library(stringr)
 library(gdata)
 library(grepl)
-setwd("/Users/niharikagoel/Downloads/Invoice_Store/results")
+setwd("Set_your_working_directory_path_here")
 merge_file_name <- "merged_file.xlsx"
 # for csv read.csv(i, headers=TRUE)
 
