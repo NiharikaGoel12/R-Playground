@@ -3,11 +3,12 @@ library(dplyr)
 library(stringr)
 library(gdata)
 library(grepl)
-setwd("/R-Playground/sample-data/merge-files/xlsx")
-merge_file_name <- "merged_file.xlsx"
+
+path <- "sample-data/merge-files/csv"
+merge_file_name <- "sample-data/merge-files/csv/merged_file.csv"
 # for csv read.csv(i, headers=TRUE)
 
-filenames <- list.files(full.names=TRUE)
+filenames <- list.files(path= path, full.names=TRUE)
 
 All <- lapply(filenames,function(i){
   if(grepl(merge_file_name,i)) {
@@ -15,9 +16,10 @@ All <- lapply(filenames,function(i){
   } 
   else {
     print(paste("Merging",i,sep = " "))
-    read.xlsx(i)
+    read.csv(i)
   }
 })
 
 df <- do.call(rbind.data.frame, All)
-write.xlsx(df,merge_file_name)
+write.csv(df,merge_file_name)
+
