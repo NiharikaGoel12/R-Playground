@@ -1,23 +1,11 @@
-library(openxlsx)
-library(dplyr)
-library(stringr)
-library(gdata)
-library(grepl)
-
 path <- "sample-data/merge-files/csv"
-merge_file_name <- "sample-data/merge-files/csv/merged_file.csv"
-# for csv read.csv(i, headers=TRUE)
+merge_file_name <- "sample-data/merge-files/merged_file.csv"
 
 filenames <- list.files(path= path, full.names=TRUE)
 
-All <- lapply(filenames,function(i){
-  if(grepl(merge_file_name,i)) {
-    print("ignoring final merge  file")
-  } 
-  else {
-    print(paste("Merging",i,sep = " "))
-    read.csv(i)
-  }
+All <- lapply(filenames,function(filename){
+    print(paste("Merging",filename,sep = " "))
+    read.csv(filename)
 })
 
 df <- do.call(rbind.data.frame, All)
