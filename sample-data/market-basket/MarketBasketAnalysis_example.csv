@@ -1,0 +1,13 @@
+bread,egg,papaya,oat packet
+papaya,bread,oat packet,milk
+egg,bread,butter,
+oat packet,egg,milk,
+milk,bread,butter,
+papaya,milk,,
+butter,papaya,bread,
+egg,bread,,
+papaya,oat packet,,
+milk,papaya,bread,
+egg,milk,,
+,,,
+,,,
